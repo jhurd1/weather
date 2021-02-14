@@ -1,4 +1,22 @@
 package com.example.weather;
 
-public class GetWeatherAsync {
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
+public class GetWeatherAsync implements Runnable{
+    private final MainActivity mainActivity;
+    private String city = "";
+
+    public GetWeatherAsync(MainActivity mainActivity, String city) {
+        this.mainActivity = mainActivity;
+        this.city = city;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    public void run() {
+        WeatherDataLoader loader = new WeatherDataLoader();
+        final WeatherConditions conditions = loader.getWeatherAndPostResults(city);
+    }
 }

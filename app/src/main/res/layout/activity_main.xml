@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -16,7 +17,22 @@
         android:layout_marginTop="321dp"
         android:layout_marginBottom="100dp"
         android:gravity="center_horizontal"
-        android:text="TESTING"
+        android:text="Enter a city name."
         android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/editCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_below="@+id/textView"
+/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/getWeather"
+        android:onClick="getWeather"
+        />
 
 </RelativeLayout>
