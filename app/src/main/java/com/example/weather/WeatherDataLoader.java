@@ -136,7 +136,6 @@ public class WeatherDataLoader {
         }
     }
 
-
     /**
      * Calls the weather api for the forecast of the provided city.
      * @param city

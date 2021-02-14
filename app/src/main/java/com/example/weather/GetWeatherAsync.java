@@ -17,6 +17,6 @@ public class GetWeatherAsync implements Runnable{
     @Override
     public void run() {
         WeatherDataLoader loader = new WeatherDataLoader();
-        final WeatherConditions conditions = loader.getWeatherAndPostResults(city);
+        WeatherConditions conditions = loader.getWeatherAndPostResults(city);
     }
 }

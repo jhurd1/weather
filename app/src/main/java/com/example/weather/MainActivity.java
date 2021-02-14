@@ -4,11 +4,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import static android.widget.Toast.LENGTH_LONG;
-import static android.widget.Toast.makeText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,13 +33,14 @@ public class MainActivity extends AppCompatActivity {
         if(conditions==null)
         {
             Log.d("MainActivity", "API returned null");
-            /*Toast toast = makeText(this, "Error occurred while retrieving weather.",
-                    LENGTH_LONG).show();*/
+            Toast toast;
+            Toast.makeText(this, "Error occurred while retrieving weather.",
+                    LENGTH_LONG).show();
         } else 
         {
             Log.d("MainActivity", "Conditions: " + conditions.getMeasurements().toString());
             Float temp = (Float) conditions.getMeasurements();
-            makeText(this, "It is currently " + temp + " degrees.",
+            Toast.makeText(this, "It is currently " + temp + " degrees.",
                     LENGTH_LONG).show();
         }
     }
